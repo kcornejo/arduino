@@ -1,0 +1,12 @@
+soporte_homepage:
+    path:     /
+    defaults: { _controller: SoporteBundle:Bitacora:index }
+soporte_borrar:
+    path:     /borrar
+    defaults: { _controller: SoporteBundle:Bitacora:borrar }
+soporte_guardar:
+    path:     /guardar
+    defaults: { _controller: SoporteBundle:Bitacora:guardar }
+soporte_ajax:
+    path:     /ajax
+    defaults: { _controller: SoporteBundle:Bitacora:ajax }
