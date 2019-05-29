@@ -33,14 +33,17 @@ class BitacoraController extends Controller {
         $presion = $request->get('presion');
         $luminosidad = $request->get('luminosidad');
         $em = $this->getDoctrine()->getManager();
-        $Bitacora = new Bitacora();
-        $Bitacora->setFecha_hora(new DateTime());
-        $Bitacora->setTemperatura($temperatura);
-        $Bitacora->setHumedad($humedad);
-        $Bitacora->setLuminosidad($luminosidad);
-        $Bitacora->setPresion($presion);
-        $em->persist($Bitacora);
-        $em->flush();
+        if($temperatura){
+            $Bitacora = new Bitacora();
+            $Bitacora->setFecha_hora(new DateTime());
+            $Bitacora->setTemperatura($temperatura);
+            $Bitacora->setHumedad($humedad);
+            $Bitacora->setLuminosidad($luminosidad);
+            $Bitacora->setPresion($presion);
+            $em->persist($Bitacora);
+            $em->flush();
+
+        }
         die();
     }
 
